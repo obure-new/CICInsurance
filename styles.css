@@ -1,0 +1,344 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.navbar {
+  background-color: #fff;
+  padding: 0.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navcontent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navcontent img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navcontent img:hover {
+  transform: scale(1.05); 
+}
+
+.main-details {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.main-details li {
+  position: relative;
+}
+
+.main-details a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  padding: 8px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.main-details a:hover,
+.main-details a.active {
+  color: #fff;
+}
+
+.dropdown-menu,
+.dropdown2-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #800000;
+  padding: 0;
+  min-width: 200px;
+  border-radius: 4px;
+  z-index: 999;
+}
+.dropdown-menu,
+.dropdown2-menu ul{
+    list-style: none;
+}
+
+.dropdown-menu li,
+.dropdown2-menu li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu a,
+.dropdown2-menu a {
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover,
+.dropdown2-menu a:hover {
+  background-color: #a30000;
+}
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown2 {
+  position: relative;
+}
+
+.dropdown2-menu {
+  left: 100%;
+  top: 0;
+  margin-left: 1px;
+}
+
+
+.dropdown2:hover > .dropdown2-menu {
+  display: block;
+}
+.social-links a {
+    text-decoration: none;
+    color: #800000;
+    font-size: 12px;
+    margin: 0 10px;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #ffc107; 
+  }
+  
+
+.sub-navbar {
+  background-color: #ffc107;
+  padding: 8px 20px;
+}
+
+
+.sub-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.sub-nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.sub-nav-links li a:hover {
+  color: #800000;
+}
+
+.home-content {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-content .carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.home-content .carousel-item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.home-content .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-content .carousel-info {
+  position: absolute;
+  bottom: 40%;
+  left: 5%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.home-content .carousel-info h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.home-content .carousel-info p {
+  font-size: 1.2em;
+}
+
+
+
+.hospital {
+  background-color: #ffc107; 
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hospital:hover {
+  background-color: #e0a800; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
