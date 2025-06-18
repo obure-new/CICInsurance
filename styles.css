@@ -40,7 +40,7 @@ body {
 .main-details {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .main-details li {
@@ -51,14 +51,14 @@ body {
   text-decoration: none;
   color: black;
   font-weight: 500;
-  padding: 8px;
+  padding: 4px;
   display: block;
   transition: color 0.3s ease;
 }
 
 .main-details a:hover,
 .main-details a.active {
-  color: #fff;
+  color: #800000;
 }
 
 .dropdown-menu,
@@ -126,16 +126,36 @@ body {
     color: #ffc107; 
   }
   
+/* second navbar */
+.search-container {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
 
+.search-input {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+}
 .sub-navbar {
   background-color: #ffc107;
   padding: 8px 20px;
 }
 
-
 .sub-nav-links {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
@@ -150,6 +170,7 @@ body {
   color: #800000;
 }
 
+/* home contents */
 .home-content {
   width: 100%;
   height: 100vh;
@@ -198,9 +219,7 @@ body {
 .home-content .carousel-info p {
   font-size: 1.2em;
 }
-
-
-
+/* button 1 */
 .hospital {
   background-color: #ffc107; 
   border: none;
@@ -215,6 +234,93 @@ body {
 .hospital:hover {
   background-color: #e0a800; 
 }
+
+/* footer */
+.help-section {
+    background-color: #800000;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.help-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.help-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.help-item {
+    background-color: white;
+    color: #800000;
+    border-radius: 20px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+.help-item i {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.help-item p {
+    font-size: 1.2em;
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo img {
+    height: 50px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.footer-social a {
+    margin-left: 10px;
+    color: #333;
+}
+
 
 
 
@@ -342,3 +448,4 @@ body {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
