@@ -58,7 +58,7 @@ body {
 
 .main-details a:hover,
 .main-details a.active {
-  color: #800000;
+  color: #ffc107;
 }
 
 .dropdown-menu,
@@ -128,13 +128,13 @@ body {
   
 /* second navbar */
 .search-container {
-  margin-left: 20px;
+  margin: 0;
   display: flex;
   align-items: center;
 }
 
 .search-input {
-  width: 150px;
+  width: 120px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -145,7 +145,7 @@ body {
   border: none;
   color: black;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px;
 }
 .sub-navbar {
   background-color: #ffc107;
@@ -156,7 +156,7 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .sub-nav-links li a {
@@ -169,6 +169,100 @@ body {
 .sub-nav-links li a:hover {
   color: #800000;
 }
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-content {
+  color: white;
+  display: none;
+  position: absolute;
+  background-color: #800000;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1000;
+  right: 0;
+  top: 100%;
+}
+
+.dropdown-content div {
+  padding: 10px 16px;
+  cursor: pointer;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.dropdown-content div:hover {
+  background-color: #a30000;
+  color: #ffc107;
+}
+/* self service button */
+.self-service-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.portal-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.portal-btn:hover {
+  color: #800000;
+}
+
+.self-service-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #800000;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  z-index: 1000;
+  right: 0;
+  top: 100%;
+}
+
+.self-service-dropdown .dropdown-content div {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.self-service-dropdown .dropdown-content div a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.self-service-dropdown .dropdown-content div:hover,
+.self-service-dropdown .dropdown-content div a:hover {
+  background-color: #a30000;
+  color: #ffc107;
+}
+
 
 /* home contents */
 .home-content {
@@ -234,155 +328,6 @@ body {
 .hospital:hover {
   background-color: #e0a800; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* banner */
 .banner {

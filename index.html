@@ -49,17 +49,16 @@
     </div>
   </div>
 
-  <!-- second navbar -->
-  <div class="sub-navbar">
+<!-- sub-navbar -->
+ <div class="sub-navbar">
+    <div class="sub-navbar-inner">
         <ul class="sub-nav-links">
-            <li>
             <div class="search-container">
                 <input type="text" placeholder="Search..." class="search-input">
                 <button class="search-button" title="Search">
-                <i class="fa fa-search"></i>
+                    <i class="fa fa-search"></i>
                 </button>
             </div>
-            </li>
             <li><a href="#">Home</a></li>
             <li><a href="#">Pharmacy</a></li>
             <li><a href="#">Individual Solutions</a></li>
@@ -67,8 +66,38 @@
             <li><a href="#">Corporate Solutions</a></li>
             <li><a href="#">Corporative Solutions</a></li>
             <li><a href="#">Claims</a></li>
+            <li>
+                <div class="language-dropdown">
+                    <button class="dropdown-btn" onclick="toggleCountryMenu()" id="selectedCountry">
+                        <i class="fa-solid fa-globe"></i>
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="countryDropdown">
+                        <div onclick="selectCountry('KE', '🇰🇪')">🇰🇪 Kenya</div>
+                        <div onclick="selectCountry('MW', '🇲🇼')">🇲🇼 Malawi</div>
+                        <div onclick="selectCountry('SS', '🇸🇸')">🇸🇸 SouthSudan</div>
+                        <div onclick="selectCountry('UG', '🇺🇬')">🇺🇬 Uganda</div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="self-service-dropdown">
+                <button class="portal-btn" onclick="togglePortalMenu()">Self-Service Portal <i class="fa fa-caret-down"></i></button>
+                    <div class="dropdown-content" id="portalDropdown">
+                        <div><a href="#">Investment Portal</a></div>
+                        <div><a href="#">Saving Portal</a></div>
+                        <div><a href="#">Pension Portal</a></div>
+                        <div><a href="#">General Insurance Portal</a></div>
+                        <div><a href="#">Brokers/Agents Portal</a></div>
+                        <div><a href="#">Claims Portal</a></div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
+</div>
+
+
 <!-- homepage -->
   <div class="home-content" id="carousel">
         <div class="carousel-item active">
@@ -95,9 +124,7 @@
         </div>
     </div>
 
-    <!-- banner -->
-
-
+    
 <!-- help section -->
     <div class="help-section">
         <h2>Get a Quote</h2>
@@ -125,6 +152,46 @@
             </div>
         </div>
     </div>
+    <div class="banner">
+  <div class="banner-content">
+    <h1>At CIC, we keep our word</h1>
+    <p>The CIC Group has for more than five decades shouldered the risks of Kenyans by providing flexible insurance and financial services built around their needs.</p>
+
+    <div class="stats" id="stats">
+      <div class="stat">
+        <h2 data-target="125">0</h2>
+        <span>Products</span>
+      </div>
+      <div class="stat">
+        <h2 data-target="23.68">0</h2>
+        <span>GWP (Ksh Bn)</span>
+      </div>
+      <div class="stat">
+        <h2 data-target="46.70">0</h2>
+        <span>Total Assets (Ksh Bn)</span>
+      </div>
+      <div class="stat">
+        <h2 data-target="8.10">0</h2>
+        <span>Market Share (%)</span>
+      </div>
+    </div>
+
+    <div class="highlights">
+      <div>
+        <div class="dot"></div>
+        Experience and Expertise
+      </div>
+      <div>
+        <div class="dot"></div>
+        Most Dynamic Insurer
+      </div>
+      <div>
+        <div class="dot"></div>
+        Reliable Track Record
+      </div>
+    </div>
+  </div>
+</div>
 <!-- footer -->
     <div class="footer">
         <div class="footer-container">
