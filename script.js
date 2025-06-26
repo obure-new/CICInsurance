@@ -1,3 +1,54 @@
+
+// Hamburger Menu Functions
+function toggleHamburgerMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileMenuOverlay");
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const body = document.body;
+
+  if (mobileMenu.classList.contains("active")) {
+    // Close menu
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburgerBtn.classList.remove("active");
+    body.style.overflow = "";
+  } else {
+    // Open menu
+    mobileMenu.classList.add("active");
+    overlay.classList.add("active");
+    hamburgerBtn.classList.add("active");
+    body.style.overflow = "hidden";
+  }
+}
+
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobileMenu");
+  const overlay = document.getElementById("mobileMenuOverlay");
+  const hamburgerBtn = document.querySelector(".hamburger-btn");
+  const body = document.body;
+
+  mobileMenu.classList.remove("active");
+  overlay.classList.remove("active");
+  hamburgerBtn.classList.remove("active");
+  body.style.overflow = "";
+}
+
+function toggleMobileDropdown(element) {
+  const dropdownMenu = element.nextElementSibling;
+  const isActive = dropdownMenu.classList.contains("active");
+  
+  // Close all other dropdowns
+  const allDropdowns = document.querySelectorAll(".mobile-dropdown-menu");
+  allDropdowns.forEach(dropdown => {
+    dropdown.classList.remove("active");
+  });
+  
+  // Toggle current dropdown
+  if (!isActive) {
+    dropdownMenu.classList.add("active");
+  }
+}
+
 // country drop down
 function toggleCountryMenu() {
     const dropdown = document.getElementById("countryDropdown");
@@ -9,19 +60,14 @@ function toggleCountryMenu() {
     button.innerHTML = `${flag} ${name} <i class="fa fa-caret-down"></i>`;
     document.getElementById("countryDropdown").style.display = "none";
   }
-  window.addEventListener("click", function(event) {
-    if (!event.target.closest(".language-dropdown")) {
-      document.getElementById("countryDropdown").style.display = "none";
-    }
-  });
-// self service portal
 
+// self service portal
   function togglePortalMenu() {
     const portalDropdown = document.getElementById("portalDropdown");
     portalDropdown.style.display = portalDropdown.style.display === "block" ? "none" : "block";
   }
 
-  // Hide both dropdowns when clicking outside
+  // Hide dropdowns when clicking outside
   window.addEventListener("click", function(event) {
     if (!event.target.closest(".language-dropdown")) {
       document.getElementById("countryDropdown").style.display = "none";
@@ -30,6 +76,13 @@ function toggleCountryMenu() {
       document.getElementById("portalDropdown").style.display = "none";
     }
   });
+
+// Close mobile menu when window is resized to desktop
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 768) {
+    closeMobileMenu();
+  }
+});
 // sliding images
 document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".carousel-item");
@@ -43,67 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(showNextSlide, 3000); 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const counters = document.querySelectorAll('.stat h2');
   let hasCounted = false;

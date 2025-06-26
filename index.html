@@ -10,10 +10,49 @@
 <body>
   <div class="navbar">
     <div class="navcontent">
-      <a href="index.html">
-      <img src="imagesfolder/1.jpg" alt="logo" />
-    </a>
-      <ul class="main-details">
+      <!-- Hamburger Menu Button -->
+      <button class="hamburger-btn" onclick="toggleHamburgerMenu()" aria-label="Toggle navigation menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Logo -->
+      <a href="index.html" class="logo">
+        <img src="imagesfolder/1.jpg" alt="logo" />
+      </a>
+
+      <!-- Self Service & Country Dropdown (Mobile Only, beside logo) -->
+      <div class="mobile-top-actions">
+        <div class="self-service-dropdown navbar-item">
+          <button class="portal-btn" onclick="togglePortalMenu()">
+            Self-Service <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="portalDropdownMobile">
+            <div><a href="#">Investment Portal</a></div>
+            <div><a href="#">Saving Portal</a></div>
+            <div><a href="#">Pension Portal</a></div>
+            <div><a href="#">General Insurance Portal</a></div>
+            <div><a href="#">Brokers/Agents Portal</a></div>
+            <div><a href="#">Claims Portal</a></div>
+          </div>
+        </div>
+        <div class="language-dropdown navbar-item">
+          <button type="button" class="dropdown-btn" onclick="toggleCountryMenu()" id="selectedCountryMobile" title="Select Country">
+            <i class="fa-solid fa-globe"></i>
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="countryDropdownMobile">
+            <div onclick="selectCountry('KE', '🇰🇪')">🇰🇪 Kenya</div>
+            <div onclick="selectCountry('MW', '🇲🇼')">🇲🇼 Malawi</div>
+            <div onclick="selectCountry('SS', '🇸🇸')">🇸🇸 South Sudan</div>
+            <div onclick="selectCountry('UG', '🇺🇬')">🇺🇬 Uganda</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <ul class="main-details desktop-nav">
         <li><a href="#" class="active">CIC GROUP</a></li>
         <li class="dropdown">
           <a href="#">INSURANCE PRODUCTS <i class="fa fa-caret-down"></i></a>
@@ -38,7 +77,11 @@
         <li><a href="#">COMPLAINTS</a></li>
         <li><a href="#">USHIRIKA GARDENS</a></li>
       </ul>
-      <div class="social-links">
+
+      <!-- Right Side Elements -->
+      <div class="navbar-right">
+        <!-- Social Links (Desktop Only) -->
+        <div class="social-links desktop-only">
           <a href="https://twitter.com/CICGroupPLC" target="_blank" rel="noopener" title="Follow CIC on Twitter">
             <i class="fab fa-twitter" aria-hidden="true"></i>
           </a>
@@ -52,9 +95,59 @@
             <i class="fab fa-youtube" aria-hidden="true"></i>
           </a>
         </div>
+      </div>
     </div>
-  </div>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <h3>Menu</h3>
+        <button class="close-btn" onclick="toggleHamburgerMenu()" aria-label="Close menu">
+          <i class="fa fa-times"></i>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#" onclick="closeMobileMenu()">Dashboard</a></li>
+        <li class="mobile-dropdown">
+          <a href="#" onclick="toggleMobileDropdown(this)">Insurance Products <i class="fa fa-caret-down"></i></a>
+          <ul class="mobile-dropdown-menu">
+            <li><a href="#" onclick="closeMobileMenu()">General Business</a></li>
+            <li><a href="#" onclick="closeMobileMenu()">Life Insurance</a></li>
+            <li><a href="#" onclick="closeMobileMenu()">Asset Management</a></li>
+            <li><a href="microinsurance.html" onclick="closeMobileMenu()">Microinsurance</a></li>
+            <li><a href="pharmacy.html" onclick="closeMobileMenu()">Pharmacy</a></li>
+          </ul>
+        </li>
+        <li><a href="#" onclick="closeMobileMenu()">Leadership</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Events</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Career</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Contact Us</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Complaints</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Ushirika Gardens</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Solutions</a></li>
+        <li><a href="#" onclick="closeMobileMenu()">Claims</a></li>
+      </ul>
+      
+      <!-- Mobile Social Links -->
+      <div class="mobile-social-links">
+        <a href="https://twitter.com/CICGroupPLC" target="_blank" rel="noopener" title="Follow CIC on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/cicgroupplc/" target="_blank" rel="noopener" title="Follow CIC on Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://ke.linkedin.com/company/cic-insurance-company" target="_blank" rel="noopener" title="Connect with CIC on LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCxh_2_U0ovQoYQ75T04X44Q" target="_blank" rel="noopener" title="Watch CIC on YouTube">
+          <i class="fab fa-youtube" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleHamburgerMenu()"></div>
+  </div>
 
 <div class="sub-navbar"> 
   <div class="sub-navbar-inner">
@@ -74,37 +167,39 @@
       <li><a href="#">Corporate Solutions</a></li>
       <li><a href="#">Corporative Solutions</a></li>
       <li><a href="#">Claims</a></li>
-      <li>
-        <div class="language-dropdown">
-          <button type="button" class="dropdown-btn" onclick="toggleCountryMenu()" id="selectedCountry" title="Select Country">
-            <i class="fa-solid fa-globe"></i>
-            <i class="fa fa-caret-down"></i>
-          </button>
-
-          <div class="dropdown-content" id="countryDropdown">
-            <div onclick="selectCountry('KE', '🇰🇪')">🇰🇪 Kenya</div>
-            <div onclick="selectCountry('MW', '🇲🇼')">🇲🇼 Malawi</div>
-            <div onclick="selectCountry('SS', '🇸🇸')">🇸🇸 South Sudan</div>
-            <div onclick="selectCountry('UG', '🇺🇬')">🇺🇬 Uganda</div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="self-service-dropdown">
-          <button class="portal-btn" onclick="togglePortalMenu()">
-            Self-Service Portal <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content" id="portalDropdown">
-            <div><a href="#">Investment Portal</a></div>
-            <div><a href="#">Saving Portal</a></div>
-            <div><a href="#">Pension Portal</a></div>
-            <div><a href="#">General Insurance Portal</a></div>
-            <div><a href="#">Brokers/Agents Portal</a></div>
-            <div><a href="#">Claims Portal</a></div>
-          </div>
-        </div>
-      </li>
     </ul>
+    
+    <!-- Desktop Self-Service and Country buttons -->
+    <div class="sub-navbar-right desktop-only">
+      <!-- Self Service Button -->
+      <div class="self-service-dropdown navbar-item">
+        <button class="portal-btn" onclick="togglePortalMenu()">
+          Self-Service <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="portalDropdown">
+          <div><a href="#">Investment Portal</a></div>
+          <div><a href="#">Saving Portal</a></div>
+          <div><a href="#">Pension Portal</a></div>
+          <div><a href="#">General Insurance Portal</a></div>
+          <div><a href="#">Brokers/Agents Portal</a></div>
+          <div><a href="#">Claims Portal</a></div>
+        </div>
+      </div>
+
+      <!-- Country Dropdown -->
+      <div class="language-dropdown navbar-item">
+        <button type="button" class="dropdown-btn" onclick="toggleCountryMenu()" id="selectedCountry" title="Select Country">
+          <i class="fa-solid fa-globe"></i>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="countryDropdown">
+          <div onclick="selectCountry('KE', '🇰🇪')">🇰🇪 Kenya</div>
+          <div onclick="selectCountry('MW', '🇲🇼')">🇲🇼 Malawi</div>
+          <div onclick="selectCountry('SS', '🇸🇸')">🇸🇸 South Sudan</div>
+          <div onclick="selectCountry('UG', '🇺🇬')">🇺🇬 Uganda</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -277,7 +372,6 @@
     </div>
 
 <script src="script.js"></script>
-
 
 </body>
 </html>
