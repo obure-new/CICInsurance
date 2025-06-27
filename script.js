@@ -166,3 +166,9 @@ function setCountryByGeolocation() {
 
 // Call geolocator on page load
 document.addEventListener("DOMContentLoaded", setCountryByGeolocation);
+
+
+//navbar 
+fetch('navbar.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('navbar').innerHTML = data);
