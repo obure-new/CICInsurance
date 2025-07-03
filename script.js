@@ -66,7 +66,7 @@ function toggleCountryMenu() {
     portalDropdown.style.display = portalDropdown.style.display === "block" ? "none" : "block";
   }
 
-  //  dropdowns
+  //  country dropdowns
   window.addEventListener("click", function(event) {
     if (!event.target.closest(".language-dropdown")) {
       document.getElementById("countryDropdown").style.display = "none";
@@ -133,42 +133,452 @@ const counters = document.querySelectorAll('.stat h2');
 
   window.addEventListener('scroll', handleScroll);
 
-// GEOLOCATOR
-function setCountryByGeolocation() {
-  const countryMap = {
-    KE: { flag: "🇰🇪", name: "Kenya" },
-    MW: { flag: "🇲🇼", name: "Malawi" },
-    SS: { flag: "🇸🇸", name: "South Sudan" },
-    UG: { flag: "🇺🇬", name: "Uganda" }
-  };
-
-  fetch("https://ipapi.co/json/")
-    .then(response => response.json())
-    .then(data => {
-      const code = data.country_code;
-      if (countryMap[code]) {
-        // Desktop
-        const btn = document.getElementById("selectedCountry");
-        if (btn) {
-          btn.innerHTML = `${countryMap[code].flag} ${countryMap[code].name} <i class="fa fa-caret-down"></i>`;
-        }
-        // Mobile
-        const btnMobile = document.getElementById("selectedCountryMobile");
-        if (btnMobile) {
-          btnMobile.innerHTML = `<i class="fa-solid fa-globe"></i> ${countryMap[code].flag} ${countryMap[code].name} <i class="fa fa-caret-down"></i>`;
-        }
-      }
-    })
-    .catch(() => {
-      // fallback: do nothing
-    });
-}
-
-// Call geolocator on page load
-document.addEventListener("DOMContentLoaded", setCountryByGeolocation);
 
 
-//navbar 
-fetch('navbar.html')
-    .then(res => res.text())
-    .then(data => document.getElementById('navbar').innerHTML = data);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+// // GEOLOCATOR
+// function setCountryByGeolocation() {
+//   const countryMap = {
+//     KE: { flag: "🇰🇪", name: "Kenya" },
+//     MW: { flag: "🇲🇼", name: "Malawi" },
+//     SS: { flag: "🇸🇸", name: "South Sudan" },
+//     UG: { flag: "🇺🇬", name: "Uganda" }
+//   };
+
+//   fetch("https://ipapi.co/json/")
+//     .then(response => response.json())
+//     .then(data => {
+//       const code = data.country_code;
+//       if (countryMap[code]) {
+//         // Desktop
+//         const btn = document.getElementById("selectedCountry");
+//         if (btn) {
+//           btn.innerHTML = `${countryMap[code].flag} ${countryMap[code].name} <i class="fa fa-caret-down"></i>`;
+//         }
+//         // Mobile
+//         const btnMobile = document.getElementById("selectedCountryMobile");
+//         if (btnMobile) {
+//           btnMobile.innerHTML = `<i class="fa-solid fa-globe"></i> ${countryMap[code].flag} ${countryMap[code].name} <i class="fa fa-caret-down"></i>`;
+//         }
+//       }
+//     })
+//     .catch(() => {
+//       // fallback: do nothing
+//     });
+// }
+
+// // Call geolocator on page load
+// document.addEventListener("DOMContentLoaded", setCountryByGeolocation);
+
+
